@@ -48,14 +48,19 @@ func main() {
 
 	// Read the file content line by line
 	scanner := bufio.NewScanner(file)
+	total := 0
 	for scanner.Scan() {
 		line := scanner.Text()       // Read the current line
+		
 		sli := functions.Slice(line) // Process the line with the Slice function
 		ato := functions.ConvertToInt(sli)
 		sort := functions.SortInts(ato)
 		area := functions.SurfaceArea(sort)
+		
 
-		fmt.Println(area)
+		total += area
+
+		fmt.Println(total)
 	}
 
 	if err := scanner.Err(); err != nil {
