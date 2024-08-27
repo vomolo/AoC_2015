@@ -1,19 +1,5 @@
 package functions
 
-// func main() {
-//     // Example slice of strings
-//     strSlice := []string{"42", "123", "0", "-7", "abc", "3.14"}
-
-//     // Convert slice of strings to slice of ints
-//     intSlice, err := ConvertToInt(strSlice)
-//     if err != nil {
-//         fmt.Println("Error:", err)
-//         return
-//     }
-
-//     fmt.Println("Slice of integers:", intSlice)
-// }
-
 func ConvertToInt(strSlice []string) []int {
 	intSlice := make([]int, len(strSlice))
 

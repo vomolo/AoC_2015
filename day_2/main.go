@@ -53,8 +53,9 @@ func main() {
 		sli := functions.Slice(line) // Process the line with the Slice function
 		ato := functions.ConvertToInt(sli)
 		sort := functions.SortInts(ato)
+		area := functions.SurfaceArea(sort)
 
-		fmt.Println(sort)
+		fmt.Println(area)
 	}
 
 	if err := scanner.Err(); err != nil {
