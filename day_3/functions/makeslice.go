@@ -1,7 +1,7 @@
 package functions
 
 func MakeSlice(str string) [][]int {
-	res := [][]int{}
+	res := [][]int{{0, 0}}
 
 	for _, char := range str {
 		if char == '>' {
@@ -20,5 +20,6 @@ func MakeSlice(str string) [][]int {
 			res = append(res, []int{0, -1})
 		}
 	}
+	
 	return res
 }
