@@ -20,6 +20,6 @@ func MakeSlice(str string) [][]int {
 			res = append(res, []int{0, -1})
 		}
 	}
-	
+
 	return res
 }
