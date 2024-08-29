@@ -2,10 +2,11 @@ package main
 
 import (
 	"bufio"
-	"day3/functions"
 	"fmt"
 	"os"
 	"strings"
+
+	"day3/functions"
 )
 
 func main() {
@@ -52,8 +53,12 @@ func main() {
 		line := scanner.Text() // Read the current line
 
 		sli := functions.MakeSlice(line) // Process the line with the Slice function
+		add := functions.AddSlices(sli)
+		clean := functions.RemoveDuplicates(add)
+		count := functions.CountUniqueSlices(clean)
 
-		fmt.Println(sli)
+		fmt.Println(clean)
+		fmt.Println(count)
 	}
 
 	if err := scanner.Err(); err != nil {
