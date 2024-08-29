@@ -17,7 +17,7 @@ func main() {
 		fmt.Println("Check length of arguments")
 		return
 	}
-	filePath := os.Args[1]
+	filePath := "../" + os.Args[1]
 	// Check .txt file extension
 	if !strings.HasSuffix(filePath, ".txt") {
 		fmt.Println(useMes)
