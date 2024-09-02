@@ -52,8 +52,9 @@ func main() {
 	for scanner.Scan() {
 		line := scanner.Text() // Read the current line
 		vow := functions.ContainsVowels(line)
+		double := functions.DoubleLetters(vow)
 
-		fmt.Println(vow)
+		fmt.Println(double)
 
 	}
 
