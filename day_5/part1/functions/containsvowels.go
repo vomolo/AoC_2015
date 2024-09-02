@@ -1,6 +1,6 @@
 package functions
 
-func ContainsVowels(str string) bool {
+func ContainsVowels(str string) string {
 	count := 0
 
 	for _, char := range str {
@@ -8,8 +8,8 @@ func ContainsVowels(str string) bool {
 			count++
 		}
 		if count >= 3 {
-			return true
+			return str
 		}
 	}
-	return false
+	return ""
 }
