@@ -53,8 +53,9 @@ func main() {
 		line := scanner.Text() // Read the current line
 		vow := functions.ContainsVowels(line)
 		double := functions.DoubleLetters(vow)
+		not := functions.DoesNotContain(double)
 
-		fmt.Println(double)
+		fmt.Println(not)
 
 	}
 
