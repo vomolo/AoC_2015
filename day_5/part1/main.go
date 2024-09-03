@@ -11,14 +11,14 @@ import (
 
 func main() {
 	useMes := "Expecting: go run your-program.go data.txt"
-	// Length of arguments check
+
 	if len(os.Args) != 2 {
 		fmt.Println(useMes)
 		fmt.Println("Check length of arguments")
 		return
 	}
 	filePath := os.Args[1]
-	// Check .txt file extension
+
 	if !strings.HasSuffix(filePath, ".txt") {
 		fmt.Println(useMes)
 		fmt.Println("Make sure it's a .txt file extension")
@@ -38,7 +38,6 @@ func main() {
 		return
 	}
 
-	// Open the file
 	file, err := os.Open(filePath)
 	if err != nil {
 		fmt.Println("Error opening file:", err)
@@ -46,19 +45,21 @@ func main() {
 	}
 	defer file.Close()
 
-	// Read the file content line by line
 	scanner := bufio.NewScanner(file)
-
+	var arr []string
 	for scanner.Scan() {
-		line := scanner.Text() // Read the current line
+		line := scanner.Text()
 		vow := functions.ContainsVowels(line)
 		double := functions.DoubleLetters(vow)
 		not := functions.DoesNotContain(double)
 
-		fmt.Println(not)
+		if not != "" {
+			arr = append(arr, not)
+		}
 
 	}
 
+	fmt.Println(len(arr))
 	if err := scanner.Err(); err != nil {
 		fmt.Println("Error reading file:", err)
 		return
