@@ -49,7 +49,8 @@ func main() {
 	var arr []string
 	for scanner.Scan() {
 		line := scanner.Text()
-		pair := functions.NonOverlappingPair(line)
+		pai := functions.NonOverlappingPair(line)
+		pair := functions.RepeatedLetterWithOneInBetween(pai)
 		fmt.Println(pair)
 
 		if pair != "" {
