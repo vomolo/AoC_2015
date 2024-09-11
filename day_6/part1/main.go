@@ -47,11 +47,12 @@ func main() {
 
 	// Read the file content line by line
 	scanner := bufio.NewScanner(file)
-
+	off := [][]int
+	on := [][]int
 	for scanner.Scan() {
 		line := scanner.Text() // Read the current line
 
-		sli := functions.KeyWords(line) // Process the line with the Slice function
+		sli := functions.KeyWords(line, off, on) // Process the line with the Slice function
 		fmt.Println(sli)
 	}
 
